@@ -1,0 +1,115 @@
+/* VARIABLES */
+:root {
+  /* Background colors */
+  --bg-main: #1c1c1c;
+  --bg-input: #6943ff;
+  --bg-results: #f4f4f4;
+  /* Border colors  */
+  --border: #b295ff;
+  /* Text colors  */
+  --txt-light: #fff;
+  --txt-btn: #3d3d3d;
+  /* Radius  */
+  --radius-soft: 5px;
+  /* Spacing  */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 32px;
+  --spacing-l: 56px;
+  --spacing-xl: 128px;
+  /* Transitions */
+  --transition-quick: all 0.2s;
+  /* Box shadows */
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* GENERAL SETUP */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  letter-spacing: -0.84px;
+  margin: 0;
+}
+
+/* UTILITY  */
+.fully-flexed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column;
+}
+
+/* CARD CONTAINER  */
+.card__container {
+  margin: var(--spacing-xl) var(--spacing-l);
+  background: var(--bg-results);
+}
+
+/* CARD INPUT  */
+.card__input {
+  padding: var(--spacing-m) var(--spacing-l);
+  background: var(--bg-input);
+  color: var(--txt-light);
+}
+
+.card__title {
+  font-size: 1.75rem;
+  line-height: 1.35;
+}
+
+.input-el {
+  width: 117px;
+  height: 83px;
+  margin: var(--spacing-m);
+  font-size: 3.625rem;
+  font-weight: 800px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-soft);
+  background: transparent;
+  text-align: center;
+  color: var(--txt-light);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none; /* Hides input up & down arrows */
+}
+
+.btn {
+  border: none;
+  border-radius: var(--radius-soft);
+  padding: var(--spacing-xs) var(--spacing-m);
+  background: var(--txt-light);
+  color: var(--txt-btn);
+  cursor: pointer;
+  transition: var(--transition-quick);
+  box-shadow: var(--box-shadow);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* CARD RESULTS  */
+.results__card {
+  
+}

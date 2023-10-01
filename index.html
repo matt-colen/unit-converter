@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- General setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- Scripts -->
+    <script src="index.js" defer></script>
+  </head>
+  <body class="fully-flexed">
+    <main class="card__container fully-flexed flex-column">
+      <section class="card__input fully-flexed flex-column">
+        <h1 class="card__title">Metric/Imperial Unit Conversion</h1>
+        <input id="input-el" class="input-el" type="number" min="1" />
+        <button id="convert-btn" class="btn convert-btn">Convert</button>
+      </section>
+      <section class="card__results fully-flexed flex-column">
+        <div id="results-length" class="results__card">
+          <h2 class="results-h2">Length (Meter/Feet)</h2>
+        </div>
+        <div id="results-volume" class="results__card">
+          <h2 class="results-h2">Length (Meter/Feet)</h2>
+        </div>
+        <div id="results-mass" class="results__card">
+          <h2 class="results-h2">Length (Meter/Feet)</h2>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
