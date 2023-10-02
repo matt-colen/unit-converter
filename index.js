@@ -1,5 +1,6 @@
 // DOM ELEMENTS
 const convertBtn = document.querySelector("#convert-btn");
+const inputEl = document.querySelector("#input-el");
 
 const convertUnits = (el) => {
   const numberToConvert = el.value;
@@ -25,6 +26,17 @@ const render = (arr, num) => {
 
 // EVENT LISTENERS
 convertBtn.addEventListener("click", () => {
-  const inputEl = document.querySelector("#input-el");
   convertUnits(inputEl);
+});
+
+//
+inputEl.addEventListener("focus", () => {
+  const label = document.querySelector("#hanging-label");
+  label.classList.add("hanging-label--float");
+});
+
+inputEl.addEventListener("keyup", (e) => {
+  if (e.key === "Enter" || e.keyCode === 13) {
+    convertUnits(inputEl);
+  }
 });
