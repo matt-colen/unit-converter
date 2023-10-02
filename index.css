@@ -3,12 +3,14 @@
   /* Background colors - general */
   --bg-main: #1c1c1c;
   --bg-input: #6943ff;
+  --bg-cta: hsl(72, 100%, 63%);
+  --bg-cta-hover: var(--bg-main);
   /* Background colors - light mode  */
-  --bg-card-light: #fff;
   --bg-results-light: #f4f4f4;
+  --bg-card-light: #fff;
   /* Background colors - dark mode  */
-  --bg-card-dark: #273549;
   --bg-results-dark: #1f2937;
+  --bg-card-dark: #273549;
   /* Border colors  */
   --border: #b295ff;
   /* Text colors -general */
@@ -53,7 +55,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 800;
   letter-spacing: -0.84px;
 }
 
@@ -73,6 +74,7 @@ h6 {
 .card__container {
   margin: var(--spacing-xl) var(--spacing-l);
   background: var(--bg-input);
+  border-radius: var(--radius-soft);
 }
 
 /* CARD INPUT  */
@@ -83,15 +85,16 @@ h6 {
 
 .card__title {
   font-size: 1.75rem;
+  font-weight: 800;
   line-height: 1.35;
 }
 
 .input-el {
   width: 117px;
   height: 83px;
-  margin: var(--spacing-m);
+  margin: var(--spacing-m) 0;
   font-size: 3.625rem;
-  font-weight: 800px;
+  font-weight: 800;
   border: 2px solid var(--border);
   border-radius: var(--radius-soft);
   background: transparent;
@@ -107,16 +110,18 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn {
   border: none;
   border-radius: var(--radius-soft);
-  padding: var(--spacing-xs) var(--spacing-m);
-  background: var(--txt-light);
-  color: var(--txt-btn);
+  padding: var(--spacing-s) var(--spacing-l);
+  background: var(--bg-cta);
+  font-weight: 700;
+  color: #111;
   cursor: pointer;
   transition: var(--transition-quick);
   box-shadow: var(--box-shadow-btn);
 }
 
 .btn:hover {
-  opacity: 0.85;
+  background: var(--bg-cta-hover);
+  color: var(--txt-light);
 }
 
 /* CARD RESULTS  */
@@ -129,6 +134,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 500px;
   height: 108px;
   border-radius: var(--radius-results);
+  gap: var(--spacing-xs);
 }
 
 .results-h2 {
