@@ -5,20 +5,25 @@
   --bg-cta-hover: hsl(273, 77%, 60%);
   --border: #b295ff;
   /* Background colors */
-  --bg-body-dark: #1c1c1c;
+  --bg-body-dark: #191619;
   --bg-results-card-dark: #f4f4f4;
-  --bg-body-light: #f4f4f4;
+  --bg-body-light: #ebe4e4;
   --bg-results-card-light: #273549;
+  --bg-toggle-switch-off: hsl(16, 100%, 69%);
+  --bg-toggle-switch-on: hsl(136, 100%, 39%);
+  --bg-toggle-off: #e2d6d6;
+  --bg-toggle-on: hsl(136, 90%, 89%);
   /* Text colors */
   --txt-dark: #fff;
   --txt-results-header-dark: #5a537b;
   --txt-data-dark: #353535;
-  --txt-light: #1c1c1c;
+  --txt-light: #191619;
   --txt-results-header-light: #ccc1ff;
   --txt-data-light: #fff;
   /* Other variables */
   --radius-soft: 5px;
   --radius-results: 25px 0;
+  --radius-round: 50%;
   --spacing-xs: 8px;
   --spacing-s: 16px;
   --spacing-m: 25px;
@@ -26,7 +31,7 @@
   --spacing-xl: 70px;
   --spacing-xxl: 128px;
   --transition-quick: all 0.2s;
-  --box-shadow-btn: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
 /* GENERAL SETUP */
@@ -61,11 +66,65 @@ body {
 }
 
 /* CARD HEADER  */
+.card__header {
+  align-items: start;
+  gap: var(--spacing-l);
+}
+
 .card__title {
+  align-self: center;
   font-size: 1.75rem;
   letter-spacing: -0.84px;
   line-height: 1.35;
   font-weight: 800;
+}
+
+/* LIGHT/DARK MODE TOGGLE */
+.mode-options {
+  gap: var(--spacing-xs);
+}
+
+.toggle__container {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.toggle__switch,
+.toggle__background {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.toggle__switch {
+  pointer-events: none; /* Allows toggle container to take click instead */
+  left: 0;
+  appearance: none; /* Overrides default checkbox styling */
+  width: var(--radius-round);
+  border: 3px solid var(--bg-toggle-off);
+  border-radius: var(--radius-round);
+  background: var(--bg-toggle-switch-off);
+  transition: var(--transition-quick);
+  z-index: 2; /* Puts switch on top */
+  box-shadow: var(--box-shadow);
+}
+
+.toggle__background {
+  width: 100%;
+  border-radius: 15px; /* Adds pill shape */
+}
+
+/* STYLES FOR CHECKED (ON) STATE */
+.checked .toggle__switch {
+  left: 50%;
+  border: 3px solid var(--bg-toggle-on);
+  background: var(--bg-toggle-switch-on);
+}
+
+.checked .toggle__background {
+  background: var(--bg-toggle-on);
 }
 
 /* CARD MAIN  */
@@ -80,7 +139,8 @@ body {
 }
 
 .card__options,
-.card__results {
+.card__results,
+header {
   padding: var(--spacing-s);
   gap: var(--spacing-l);
 }
@@ -133,7 +193,7 @@ input[type="number"]::-webkit-outer-spin-button {
   letter-spacing: 1px;
   cursor: pointer;
   transition: var(--transition-quick);
-  box-shadow: var(--box-shadow-btn);
+  box-shadow: var(--box-shadow);
   border-radius: var(--radius-soft);
 }
 
@@ -172,6 +232,10 @@ input[type="number"]::-webkit-outer-spin-button {
 .light-mode {
   background: var(--bg-body-light);
   color: var(--txt-light);
+}
+
+.light-mode .toggle__background {
+  background: var(--bg-toggle-off);
 }
 
 .light-mode .results__card {

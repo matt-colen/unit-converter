@@ -1,6 +1,7 @@
 // DOM ELEMENTS
 const convertBtn = document.querySelector("#convert-btn");
 const inputEl = document.querySelector("#number-input");
+const modeToggle = document.querySelector(".toggle__container");
 
 // CONVERSIONS
 const conversions = {
@@ -30,17 +31,22 @@ const convertUnits = (el) => {
 
 // Render Results Function
 const renderResults = (arr, num) => {
-  const resultCards = document.querySelectorAll(".results__card");
-  // Stores the different template literals being used 
+  const resultsCards = document.querySelectorAll(".results__card");
+  const resultsData = document.querySelectorAll(".results__data");
+  // Stores the different template literals being used
   const resultText = [
     `${num} meters = ${arr[0]} feet | ${num} feet = ${arr[1]} meters`,
     `${num} liters = ${arr[2]} gallons | ${num} gallons = ${arr[3]} liters`,
     `${num} kilos = ${arr[4]} pounds | ${num} pounds = ${arr[5]} kilos`,
   ];
 
-  // Updates the textContent for each card & triggers the animation
-  resultCards.forEach((card, index) => {
+  // Updates the textContent for each p el in the card
+  resultsData.forEach((card, index) => {
     card.textContent = resultText[index];
+  });
+
+  // Starts the animation for each card
+  resultsCards.forEach((card) => {
     triggerAnimation(card);
   });
 };
@@ -52,6 +58,16 @@ const triggerAnimation = (card) => {
     card.classList.remove("results__card-ani");
     card.style.display = "flex";
   });
+};
+
+// TOGGLE LIGHT/DARK MODES
+const toggleMode = () => {
+  const body = document.body;
+  // Toggle for the toggle switch styling
+  modeToggle.classList.toggle("checked");
+  // Toggles for the overall styles
+  body.classList.toggle("dark-mode");
+  body.classList.toggle("light-mode");
 };
 
 // EVENT LISTENERS
@@ -69,4 +85,8 @@ inputEl.addEventListener("keyup", (e) => {
   if (e.key === "Enter" || e.keyCode === 13) {
     convertUnits(inputEl);
   }
+});
+
+modeToggle.addEventListener("click", () => {
+  toggleMode();
 });

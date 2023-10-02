@@ -18,7 +18,17 @@
   </head>
   <body class="fully-flexed dark-mode">
     <div class="card__container flex-column">
-      <header>
+      <header class="card__header flex-column">
+        <!-- Light/Dark mode toggle  -->
+        <div class="mode-options flex-column">
+          <div class="toggle__container checked">
+            <input id="mode-toggle" class="toggle__switch" type="checkbox" />
+            <div class="toggle__background"></div>
+          </div>
+          <label for="mode-toggle" class="toggle__label">Dark Mode</label>
+        </div>
+
+        <!-- Card title  -->
         <h1 class="card__title">Metric/Imperial Unit Conversion</h1>
       </header>
 
