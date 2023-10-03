@@ -268,7 +268,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* MEDIA QUERIES  */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
   body {
     height: auto;
     padding: var(--spacing-l) 0;
