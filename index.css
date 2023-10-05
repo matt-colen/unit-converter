@@ -278,6 +278,14 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+/* Ensures that the body content doesn't overflow on screens with a small height */
+@media screen and (max-height: 1000px) {
+  body {
+    height: auto;
+    padding: var(--spacing-l) 0;
+  }
+}
+
 @keyframes slide-in-left {
   0% {
     -webkit-transform: translateX(-1000px);

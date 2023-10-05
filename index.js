@@ -61,6 +61,17 @@ const triggerAnimation = (card) => {
 };
 
 // TOGGLE LIGHT/DARK MODES
+
+// 
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  document.body.classList.replace("light-mode", "dark-mode")
+  modeToggle.classList.add("checked")
+} else {
+  document.body.classList.replace("dark-mode", "light-mode")
+  modeToggle.classList.remove("checked")
+}
+
+
 const toggleMode = () => {
   const body = document.body;
   // Toggle for the toggle switch styling
